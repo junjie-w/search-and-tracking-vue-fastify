@@ -14,6 +14,7 @@ defineEmits<Emits>()
 <template>
   <div class="w-full">
     <input
+      id="product-search"
       :value="modelValue"
       @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
       type="text"
