@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { debouncedRef } from '@vueuse/core'
+import { refDebounced } from '@vueuse/core'
 import SearchInput from './SearchInput.vue'
 import SearchResults from './SearchResults.vue'
 import { searchProducts } from '@/services/searchService'
@@ -8,7 +8,7 @@ import { getUserId } from '@/utils/getUserId.util.ts'
 import type { Product } from '@/types'
 
 const searchTerm = ref('')
-const debouncedSearchTerm = debouncedRef(searchTerm, 200)
+const debouncedSearchTerm = refDebounced(searchTerm, 200)
 const searchResults = ref<Product[]>([])
 const isLoading = ref(false)
 
