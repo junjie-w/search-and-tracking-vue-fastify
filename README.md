@@ -283,6 +283,11 @@ Search something and navigate to product detail page, observe the request URLs i
 - Click on a product from the search results to navigate to the product detail page
 - Open browser DevTools → Network tab and observe that the `/track-product-view` api endpoint is automatically called with the productId and userId. 
 - Check the browser console log: `Product view tracked: ...`
+
+### 4. Recently Viewed Products
+- Click on a product from the search results to navigate to its product detail page
+- Click **Back to Home**, notice the most recently viewed product appears first in the **Recently viewed** list.
+- Open browser DevTools → Application → Local Storage and observe that the list persists under `recently-viewed-product-ids`.
   
 ## Testing, CI and Other Practices 
 - **Testing**

@@ -3,6 +3,7 @@ import { ref, watch } from 'vue'
 import { refDebounced } from '@vueuse/core'
 import SearchInput from './SearchInput.vue'
 import SearchResults from './SearchResults.vue'
+import RecentlyViewedProducts from './RecentlyViewedProducts.vue'
 import { searchProducts } from '@/services/searchService'
 import { getUserId } from '@/utils/getUserId.util.ts'
 import type { Product } from '@/types'
@@ -43,5 +44,7 @@ watch(debouncedSearchTerm, async (searchTerm) => {
       :is-loading="isLoading"
       :search-term="debouncedSearchTerm"
     />
+
+    <RecentlyViewedProducts v-if="!searchTerm.trim()" />
   </div>
 </template>

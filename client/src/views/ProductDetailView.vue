@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import { trackProductView } from '@/services/trackingService'
+import { useRecentlyViewedStore } from '@/stores/recentlyViewed'
 import { getUserId } from '@/utils/getUserId.util.ts'
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const route = useRoute()
+const recentlyViewedStore = useRecentlyViewedStore()
 const productId = ref('')
 
 onMounted(async () => {
@@ -17,6 +19,8 @@ onMounted(async () => {
   productId.value = props.id || (route.params.id as string) || ''
   
   if (productId.value) {
+    recentlyViewedStore.recordView(productId.value)
+
     try {
       const userId = getUserId()
       await trackProductView(userId, productId.value)
