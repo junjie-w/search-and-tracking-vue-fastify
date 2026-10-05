@@ -291,7 +291,7 @@ Search something and navigate to product detail page, observe the request URLs i
   
 ## Testing, CI and Other Practices 
 - **Testing**
-    > unit tests and api tests for backend, unit tests and basic e2e tests for frontend
+    > Backend unit and api tests; frontend unit tests with Vitest and e2e tests with Playwright 
 - **CI workflow**
     > automated build and tests for backend and frontend on every PR
 - **Loading state**
@@ -338,4 +338,5 @@ npm run build
 npm run preview
 npm run test:unit
 npm run test:e2e
+npm run test:e2e:chromium
 ```
