@@ -288,6 +288,7 @@ Search something and navigate to product detail page, observe the request URLs i
 - Click on a product from the search results to navigate to its product detail page
 - Click **Back to Home**, notice the most recently viewed product appears first in the **Recently viewed** list.
 - Open browser DevTools → Application → Local Storage and observe that the list persists under `recently-viewed-product-ids`.
+- Implemented with [Pinia](https://pinia.vuejs.org/)
   
 ## Testing, CI and Other Practices 
 - **Testing**
