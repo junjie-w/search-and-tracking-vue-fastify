@@ -288,10 +288,11 @@ Search something and navigate to product detail page, observe the request URLs i
 - Click on a product from the search results to navigate to its product detail page
 - Click **Back to Home**, notice the most recently viewed product appears first in the **Recently viewed** list.
 - Open browser DevTools → Application → Local Storage and observe that the list persists under `recently-viewed-product-ids`.
+- Implemented with [Pinia](https://pinia.vuejs.org/)
   
 ## Testing, CI and Other Practices 
 - **Testing**
-    > unit tests and api tests for backend, unit tests and basic e2e tests for frontend
+    > Backend unit and api tests; frontend unit tests with Vitest and e2e tests with Playwright 
 - **CI workflow**
     > automated build and tests for backend and frontend on every PR
 - **Loading state**
@@ -338,4 +339,5 @@ npm run build
 npm run preview
 npm run test:unit
 npm run test:e2e
+npm run test:e2e:chromium
 ```
